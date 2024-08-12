@@ -9,7 +9,7 @@
     "@wdio/spec-reporter": "^8.39.0",
     "@wdio/visual-service": "^5.2.1",
     "ts-node": "^10.9.2",
-    "typescript": "^4.9.5",
+    "typescript": "^5.5.4",
     "wdio-aws-device-farm-service": "^8.0.9",
     "wdio-docker-service": "^3.2.1",
     "wdio-intercept-service": "^4.4.1",
