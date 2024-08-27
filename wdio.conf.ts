@@ -1,4 +1,7 @@
 import type { Options } from "@wdio/types";
+
+const { HEADLESS: headless } = process.env;
+
 export const config: Options.Testrunner = {
   //
   // ====================
@@ -59,6 +62,26 @@ export const config: Options.Testrunner = {
   capabilities: [
     {
       browserName: "chrome",
+      "goog:chromeOptions": {
+        args:
+          headless.toLocaleLowerCase() === "y"
+            ? [
+                "--headless=new",
+                "--incognito",
+                "--disable-extensions",
+                "--disable-gpu",
+                "--no-sandbox",
+                "--disable-dev-shm-usage",
+              ]
+            : [
+                "--incognito",
+                "--disable-extensions",
+                "--disable-gpu",
+                "--no-sandbox",
+                "--disable-dev-shm-usage",
+              ],
+      },
+      acceptInsecureCerts: true,
     },
   ],
 
